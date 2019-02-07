@@ -22,7 +22,7 @@ public class DBconnection {
     private final static String BasedUrl="jdbc:mysql://";
     private final static String host="localhost";
     private final static String port="3306";
-    private static String dbName="";   
+    private static String dbName="PAYROLL";   
     private final static String url=BasedUrl+host+":"+port+"/"+dbName;
     private static Connection connection=null;
 

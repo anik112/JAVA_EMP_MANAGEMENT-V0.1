@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package test;
 
 import java.util.Calendar;
 
@@ -59,7 +59,6 @@ public class CompanyInformation extends javax.swing.JFrame {
         jPanelFooter = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Entry: Company Information");
 
         jPanelMain.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -353,7 +352,7 @@ public class CompanyInformation extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTablePan, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                .addComponent(jTablePan, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(jPanelFooter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -375,7 +374,9 @@ public class CompanyInformation extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -385,32 +386,23 @@ public class CompanyInformation extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    /**
-     * write hear code for execute when click in save button.
-     * Event Type: ActionPerformed.
-     * @param evt 
-     */
-    
     private void jBtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSaveActionPerformed
         // TODO add your handling code here:
-        
+
         Calendar calendar = Calendar.getInstance();
         java.sql.Date processDate = new java.sql.Date(calendar.getTime().getTime());
-        
+
         table_model.CompanyInformation info=new table_model.CompanyInformation();
-        
-        
+
         info.setCompanyName(jTextCompanyNameEnglish.getText());
         info.setAddress(jTextAreaAddress.getText());
         info.setHrHeadName(jTextHRheadName.getText());
         info.setMobileNumber(jTextPhoneNumber.getText());
         info.setProcessBy("anik");
         info.setProcessDate(processDate);
-        
+
         new table_service.CompanyInformation().information_save(info);
-        
+
     }//GEN-LAST:event_jBtnSaveActionPerformed
 
     private void jBtnChooseCompanyLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnChooseCompanyLogoActionPerformed
@@ -444,7 +436,7 @@ public class CompanyInformation extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
