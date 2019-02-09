@@ -41,5 +41,14 @@ public interface CompanyInformation {
      * @param comid
      * @return
      */
-    List<CompanyInformation> get_company_information(int comid);
+    List<table_model.CompanyInformation> get_company_information(int comid);
+    
+    
+    /**
+     * Function name: get_company_information
+     * this function work for get company information from database and throw into view
+     * @param comid
+     * @return
+     */
+    List<table_model.CompanyInformation> get_all_company_information();
 }

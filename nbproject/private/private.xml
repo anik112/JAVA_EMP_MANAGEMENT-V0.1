@@ -3,12 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/connection/DBconnection.java</file>
-            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/view_massage/ErrorMessage.java</file>
+            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/table_service/CompanyInformation.java</file>
             <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/view/CompanyInformation.java</file>
-            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/payroll/PAYROLL.java</file>
-            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/connection/DatabaseName.java</file>
-            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/</file>
+            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/test/CompanyInformation.java</file>
+            <file>file:/F:/PRANTA%20software%20and%20program/Pranta_Office_Work_File/PAYROLL/src/table_model/CompanyInformation.java</file>
         </group>
     </open-files>
 </project-private>
