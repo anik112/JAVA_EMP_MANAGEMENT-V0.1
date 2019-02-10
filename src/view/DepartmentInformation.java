@@ -15,17 +15,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Vista Soft IT
  */
-public class CompanyInformation extends javax.swing.JFrame {
+public class DepartmentInformation extends javax.swing.JFrame {
 
-    
-    private final Calendar calendar = Calendar.getInstance();
-    private final java.sql.Date processDate = new java.sql.Date(calendar.getTime().getTime());
-    
-    
     /**
      * Creates new form CompanyInformation
      */
-    public CompanyInformation() {
+    public DepartmentInformation() {
         initComponents();
         
         displayDataInTable();
@@ -59,7 +54,7 @@ public class CompanyInformation extends javax.swing.JFrame {
         jTextPhoneNumber = new javax.swing.JTextField();
         jBtnSave = new javax.swing.JButton();
         jBtnChooseCompanyLogo = new javax.swing.JButton();
-        jBtnUpdate = new javax.swing.JButton();
+        jBtnEdit = new javax.swing.JButton();
         jBtnDelete = new javax.swing.JButton();
         jBtnEdit1 = new javax.swing.JButton();
         jBtnChooseHrSignatur = new javax.swing.JButton();
@@ -164,15 +159,15 @@ public class CompanyInformation extends javax.swing.JFrame {
             }
         });
 
-        jBtnUpdate.setBackground(new java.awt.Color(255, 255, 255));
-        jBtnUpdate.setFont(new java.awt.Font("Vrinda", 1, 14)); // NOI18N
-        jBtnUpdate.setText("UPDATE");
-        jBtnUpdate.setBorder(null);
-        jBtnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jBtnUpdate.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        jBtnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        jBtnEdit.setBackground(new java.awt.Color(255, 255, 255));
+        jBtnEdit.setFont(new java.awt.Font("Vrinda", 1, 14)); // NOI18N
+        jBtnEdit.setText("UPDATE");
+        jBtnEdit.setBorder(null);
+        jBtnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jBtnEdit.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        jBtnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnUpdateActionPerformed(evt);
+                jBtnEditActionPerformed(evt);
             }
         });
 
@@ -265,7 +260,7 @@ public class CompanyInformation extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jBtnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -319,7 +314,7 @@ public class CompanyInformation extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jBtnUpdate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(jBtnEdit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(jBtnDelete, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jBtnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -407,7 +402,10 @@ public class CompanyInformation extends javax.swing.JFrame {
 
     private void jBtnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSaveActionPerformed
         // TODO add your handling code here:
-        
+
+        Calendar calendar = Calendar.getInstance();
+        java.sql.Date processDate = new java.sql.Date(calendar.getTime().getTime());
+
         table_model.CompanyInformation info=new table_model.CompanyInformation();
 
         info.setCompanyName(jTextCompanyNameEnglish.getText());
@@ -428,25 +426,9 @@ public class CompanyInformation extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnChooseCompanyLogoActionPerformed
 
-    private void jBtnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnUpdateActionPerformed
+    private void jBtnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditActionPerformed
         // TODO add your handling code here:
-        
-        table_model.CompanyInformation info=new table_model.CompanyInformation();
-        
-        info.setCompanyName(jTextCompanyNameEnglish.getText());
-        info.setAddress(jTextAreaAddress.getText());
-        info.setHrHeadName(jTextHRheadName.getText());
-        info.setMobileNumber(jTextPhoneNumber.getText());
-        info.setProcessBy("anik");
-        info.setProcessDate(processDate);
-
-        new table_service.CompanyInformation().information_update(info);
-        
-        clearAllField();
-        displayDataInTable();
-        
-        
-    }//GEN-LAST:event_jBtnUpdateActionPerformed
+    }//GEN-LAST:event_jBtnEditActionPerformed
 
     private void jBtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDeleteActionPerformed
         // TODO add your handling code here:
@@ -454,18 +436,6 @@ public class CompanyInformation extends javax.swing.JFrame {
 
     private void jBtnEdit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEdit1ActionPerformed
         // TODO add your handling code here:
-        
-        
-        table_model.CompanyInformation info=new table_model.CompanyInformation();
-        
-        // set data in text field
-        info=new table_service.CompanyInformation().get_company_information(jTextCompanyNameEnglish.getText());
-        
-        jTextCompanyNameEnglish.setText(info.getCompanyName());
-        jTextHRheadName.setText(info.getHrHeadName());
-        jTextPhoneNumber.setText(info.getMobileNumber());
-        jTextAreaAddress.setText(info.getAddress());
-        
     }//GEN-LAST:event_jBtnEdit1ActionPerformed
 
     private void jBtnChooseHrSignaturActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnChooseHrSignaturActionPerformed
@@ -521,21 +491,23 @@ public class CompanyInformation extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CompanyInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepartmentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CompanyInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepartmentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CompanyInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepartmentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CompanyInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DepartmentInformation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CompanyInformation().setVisible(true);
+                new DepartmentInformation().setVisible(true);
             }
         });
     }
@@ -544,9 +516,9 @@ public class CompanyInformation extends javax.swing.JFrame {
     private javax.swing.JButton jBtnChooseCompanyLogo;
     private javax.swing.JButton jBtnChooseHrSignatur;
     private javax.swing.JButton jBtnDelete;
+    private javax.swing.JButton jBtnEdit;
     private javax.swing.JButton jBtnEdit1;
     private javax.swing.JButton jBtnSave;
-    private javax.swing.JButton jBtnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

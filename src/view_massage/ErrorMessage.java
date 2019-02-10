@@ -5,6 +5,8 @@
  */
 package view_massage;
 
+import view.DepartmentInformation;
+
 /**
  *
  * @author Vista Soft IT
@@ -77,6 +79,7 @@ public class ErrorMessage extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bodyErrorMassage;

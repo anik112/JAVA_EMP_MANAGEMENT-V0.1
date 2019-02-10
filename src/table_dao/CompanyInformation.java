@@ -18,21 +18,21 @@ public interface CompanyInformation {
      * this function work for save company information.
      * @param information 
      */
-    void information_save(table_model.CompanyInformation information);
+    public void information_save(table_model.CompanyInformation information);
     
     /**
      * Function name: information_update.
      * this function work for update company information.
      * @param information 
      */
-    void information_update(table_model.CompanyInformation information);
+    public void information_update(table_model.CompanyInformation information);
     
     /**
      * Function name: information_delete.
      * this function work for delete company data
      * @param comid 
      */
-    void information_delete(int comid);
+    public void information_delete(int comid);
     
     
     /**
@@ -41,7 +41,7 @@ public interface CompanyInformation {
      * @param comid
      * @return
      */
-    List<table_model.CompanyInformation> get_company_information(int comid);
+    public table_model.CompanyInformation get_company_information(String comName);
     
     
     /**
