@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2b72975c-c2d7-4c28-89a4-c975dba8b0ff">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT comid,company,address FROM tb_company_info]]>
+	</queryString>
+	<field name="comid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="company" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<elementGroup>
+				<staticText>
+					<reportElement x="13" y="0" width="529" height="35" uuid="5967ca3c-ff4d-4ede-baa0-d94fc3dc253d"/>
+					<box>
+						<pen lineStyle="Double"/>
+						<topPen lineStyle="Double"/>
+						<leftPen lineStyle="Double"/>
+						<bottomPen lineStyle="Double"/>
+						<rightPen lineStyle="Double"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font size="18"/>
+					</textElement>
+					<text><![CDATA[Static text]]></text>
+				</staticText>
+			</elementGroup>
+			<line>
+				<reportElement x="13" y="41" width="529" height="1" uuid="db28f769-63aa-4f96-81b4-eac300322be3"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="10" width="100" height="20" uuid="c57f4535-7b48-46cf-ad31-1a8eb533f8ae"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="158" y="10" width="139" height="20" uuid="0d3dbbfd-308d-44f2-9295-ff141984e8ee"/>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="337" y="10" width="205" height="20" uuid="a8a878d9-5f6c-4cdf-adad-436aa1ca0442"/>
+				<text><![CDATA[ADDRESS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="6" y="41" width="536" height="1" uuid="e0736905-a931-4a6a-a99a-9f277471cf13"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<elementGroup/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="8" width="100" height="20" uuid="be615101-e955-4d3e-acc3-de125ed89f69"/>
+				<textFieldExpression><![CDATA[$F{comid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="8" width="139" height="20" uuid="64b72c14-6434-47d8-8e9f-af705fe19863"/>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="8" width="205" height="20" uuid="17119fa9-b4b8-4f5b-9409-988e4c2f66c3"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="507" y="10" width="35" height="20" uuid="38811d53-4a71-43d8-bb01-abb3a450d40a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="446" y="10" width="32" height="20" uuid="053ea32c-ff84-47cf-890d-e6ad7071c5dd"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="479" y="10" width="28" height="20" uuid="35ef3f7e-5318-4d03-94b0-bd944636323b"/>
+				<text><![CDATA[OF]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="8" y="10" width="156" height="20" uuid="225d6a7b-7b10-4db1-823b-b9eed319a043"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
